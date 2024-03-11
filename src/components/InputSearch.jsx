@@ -75,7 +75,6 @@ function InputSearch({
                   id={city.id + `-${key}`}
                   role="option"
                   onClick={(event) => {
-                    console.log(city, "city desde option");
                     setCityName(city);
                     handleGetWeather(event, city);
                   }}

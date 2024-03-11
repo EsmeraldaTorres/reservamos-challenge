@@ -5,13 +5,12 @@ const Loader = ({ cityName }) => {
   const [noCoordsInfo, setNoCoordsInfo] = useState(false);
 
   useEffect(() => {
-    console.log(typeof cityName);
     if (typeof cityName === "object") {
       if (cityName.lat === null || cityName.long === null) {
         setNoCoordsInfo(true);
       }
     }
-  }, []);
+  }, [cityName]);
 
   return (
     <>

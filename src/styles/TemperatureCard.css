@@ -33,7 +33,6 @@
   text-align: center;
   margin-bottom: 1rem;
 }
-
 .card-content {
   width: max-content;
   height: max-content;
@@ -78,7 +77,6 @@
   text-align: center;
   margin-bottom: 1rem;
 }
-
 .weather-btn {
   margin: 2rem 0;
   max-width: 250px;
@@ -97,7 +95,6 @@
   text-align: center;
   width: 100%;
 }
-
 .weather-btn:hover {
   color: #ffffff;
   border: 1px solid #a72870;
@@ -106,7 +103,6 @@
 .weather-btn:active {
   transform: scale(0.95);
 }
-
 .loader {
   z-index: -1;
   width: 40px;
@@ -150,7 +146,6 @@
   text-align: center;
   color: #1b247f;
 }
-
 .no-info-message-loader {
   text-align: center;
   width: 100px;

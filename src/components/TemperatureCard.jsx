@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "../styles/TemperatureCard.css";
 
 const TemperatureCard = ({ maxMinTempByDay, cityInfo }) => {
@@ -8,9 +8,6 @@ const TemperatureCard = ({ maxMinTempByDay, cityInfo }) => {
     return date.toLocaleDateString("es-ES", options);
   };
 
-  useEffect(() => {
-    console.log(maxMinTempByDay, "maxMinTempByDay");
-  }, []);
   const [isCelsius, setIsCelsius] = useState(true);
 
   const changeTemperature = () => {
@@ -53,7 +50,7 @@ const TemperatureCard = ({ maxMinTempByDay, cityInfo }) => {
           ))}
         </div>
         <button className="weather-btn" onClick={changeTemperature}>
-          Change to F°/C°
+          Cambiar a F°/C°
         </button>
       </section>
     </>
