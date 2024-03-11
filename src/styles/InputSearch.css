@@ -1,0 +1,51 @@
+.options-box {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  max-height: 200px;
+  overflow: scroll;
+  max-width: 220px;
+  position: absolute;
+  background: white;
+  width: 100%;
+  padding: 1em 0em;
+}
+.input-container {
+  width: max-content;
+  /* max-width: 400px; */
+}
+.input-search {
+  outline: none;
+  color: rgb(35, 35, 35);
+  font: 400 16px / 65px "Open Sans", "Helvetica Neue", Helvetica, sans-serif;
+  appearance: none;
+  background-color: rgb(255, 255, 255);
+  background-position: 10px 45%;
+  background-repeat: no-repeat;
+  border: 1px solid rgb(226, 226, 226);
+  display: block;
+  margin: 0px;
+  max-height: 65px;
+  min-height: 65px;
+  padding-right: 5px;
+  text-transform: capitalize;
+  transition: border-color 0s ease 0s;
+  width: 100%;
+  padding-left: 40px;
+}
+.input-search-icon {
+  background-image: url("https://widgets.reservamos.mx/search/2.3.1/5ed64967fdabee4e08fb1524faa07b8b.svg");
+  width: 35px;
+  height: 30px;
+  position: absolute;
+  background-position: 10px 45%;
+  background-repeat: no-repeat;
+}
+.options {
+  list-style: none;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  padding: 0.8em 0.8em;
+}
+.options:hover {
+  background-color: rgb(246, 244, 244);
+  width: 100%;
+}
