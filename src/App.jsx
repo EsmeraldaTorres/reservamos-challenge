@@ -23,17 +23,10 @@ function App() {
       .then(function (response) {
         const responseReservamosApi = response.data;
 
-        const uniqueCityNames = new Set(
-          response.data.map((item) => item.city_name)
-        );
-
-        console.log(uniqueCityNames, "uniqueCityNames");
-
         const noRepeatPlacesReservamosApi = responseReservamosApi.filter(
           (item, index, self) =>
             index === self.findIndex((t) => t.city_name === item.city_name)
         );
-
         if (noRepeatPlacesReservamosApi.length != 0) {
           setReservamosDestinations(noRepeatPlacesReservamosApi);
         } else {
@@ -136,7 +129,13 @@ function App() {
         date: dates,
       };
     });
-    setMaxMinTempByDay(temperaturesByDay);
+
+    if (temperaturesByDay.length > 5) {
+      const fiveDays = temperaturesByDay.slice(0, temperaturesByDay.length - 1);
+      setMaxMinTempByDay(fiveDays);
+    } else {
+      setMaxMinTempByDay(temperaturesByDay);
+    }
   };
 
   useEffect(() => {
@@ -168,8 +167,8 @@ function App() {
           <ErrorMessage />
         </>
       ) : (
-        maxMinTempByDay.length === 5 &&
-        !errorWeatherApi && (
+        maxMinTempByDay.length >= 5 &&
+        errorWeatherApi === false && (
           <TemperatureCard
             cityInfo={cityInfo}
             maxMinTempByDay={maxMinTempByDay}

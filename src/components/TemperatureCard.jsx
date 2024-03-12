@@ -1,14 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/TemperatureCard.css";
 
 const TemperatureCard = ({ maxMinTempByDay, cityInfo }) => {
+  const [isCelsius, setIsCelsius] = useState(true);
+
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     const options = { day: "numeric", month: "long" };
     return date.toLocaleDateString("es-ES", options);
   };
-
-  const [isCelsius, setIsCelsius] = useState(true);
 
   const changeTemperature = () => {
     setIsCelsius(!isCelsius);

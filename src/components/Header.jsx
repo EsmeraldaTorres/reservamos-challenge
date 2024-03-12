@@ -17,7 +17,7 @@ const Header = () => {
             <span className="title">Esmeralda</span>
             <img
               src="https://assets-fl.reservamos.mx/assets/components/account-dropdown/account-icon-0930c9900955ffd86a8c6094b8da27d4731d4a45fb401f5ee20b26dcc607c90c.svg"
-              alt=""
+              alt="icon"
               data-account-image=""
             />
           </div>

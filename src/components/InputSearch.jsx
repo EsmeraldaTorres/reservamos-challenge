@@ -2,17 +2,15 @@ import { useEffect, useState } from "react";
 import { useRef } from "react";
 import "../styles/InputSearch.css";
 
-function InputSearch({
+const InputSearch = ({
   setCityName,
   reservamosDestinations,
   cityName,
   handleGetWeather,
-  loadingPlaces,
-}) {
+}) => {
   const [showOptions, setShowOptions] = useState(false);
   const selectRef = useRef(null);
 
-  //  si no hay lat y long, esa funcion no se debe consumir.
   useEffect(() => {
     if (reservamosDestinations.length >= 1) {
       setShowOptions(true);
@@ -90,6 +88,5 @@ function InputSearch({
       </div>
     </>
   );
-}
-
+};
 export default InputSearch;
