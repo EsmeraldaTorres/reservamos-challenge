@@ -123,6 +123,9 @@
   animation: l6 1s infinite;
   transform: perspective(300px) translateZ(0px);
 }
+.bg-hottest-day {
+  background-color: #e8e8e8;
+}
 @keyframes l6 {
   to {
     transform: perspective(300px) translateZ(150px);

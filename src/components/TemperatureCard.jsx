@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import "../styles/TemperatureCard.css";
 
-const TemperatureCard = ({ maxMinTempByDay, cityInfo }) => {
+const TemperatureCard = ({ maxMinTempByDay, cityInfo, maxTempOnFiveDays }) => {
+  useEffect(() => {
+    console.log(maxTempOnFiveDays, "maxTempOnFiveDays");
+  }, []);
   const [isCelsius, setIsCelsius] = useState(true);
 
   const formatDate = (dateString) => {
@@ -17,7 +20,7 @@ const TemperatureCard = ({ maxMinTempByDay, cityInfo }) => {
   return (
     <>
       <section className="info-cards-container">
-        <div className=" text-center city-name-container">
+        <div className="text-center city-name-container">
           <span className="city-name">{cityInfo?.city_name},</span>
           <span>{cityInfo?.country}</span>
         </div>
@@ -26,12 +29,16 @@ const TemperatureCard = ({ maxMinTempByDay, cityInfo }) => {
         </div>
         <div className="card-box">
           {maxMinTempByDay.map((day, key) => (
-            <div key={key} className="card-content">
+            <div
+              key={key}
+              className={`card-content  ${
+                maxTempOnFiveDays == day.temp_max && "bg-hottest-day"
+              }`}
+            >
               <p className="date">{formatDate(day.date)} </p>
               <p>
                 <span className="label-card">Max:{""}</span>
                 <span className="value-temperature">
-                  {" "}
                   {isCelsius
                     ? `${(day.temp_max - 273.15).toFixed(1)} °C`
                     : `${day.temp_max} °F`}

@@ -15,6 +15,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [errorWeatherApi, setErrorWeatherApi] = useState(false);
   const [cityInfo, setCityInfo] = useState({});
+  const [maxTempOnFiveDays, setMaxTempOnFiveDays] = useState();
 
   const handleGetReservamosDestinations = () => {
     const urlReservamosPlaces = `https://search.reservamos.mx/api/v2/places?q=${cityName}`;
@@ -136,6 +137,11 @@ function App() {
     } else {
       setMaxMinTempByDay(temperaturesByDay);
     }
+
+    setMaxTempOnFiveDays(
+      Math.max(...temperaturesByDay.map((day) => parseFloat(day.temp_max)))
+    );
+    console.log(maxTempOnFiveDays, "temperaturesByDay");
   };
 
   useEffect(() => {
@@ -172,6 +178,7 @@ function App() {
           <TemperatureCard
             cityInfo={cityInfo}
             maxMinTempByDay={maxMinTempByDay}
+            maxTempOnFiveDays={maxTempOnFiveDays}
           />
         )
       )}
